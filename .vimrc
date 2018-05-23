@@ -1,0 +1,58 @@
+filetype plugin indent on
+execute pathogen#infect()
+set encoding=utf-8
+syntax on
+
+set wrap
+set linebreak
+set nolist
+
+set hlsearch
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+set autoindent
+
+set ruler
+set number
+set list
+set wildmenu
+set showcmd
+
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set tabstop=4
+set smarttab
+
+set clipboard=unnamed
+set spell spelllang=en_us
+
+color desert
+
+let mapleader = ","
+
+inoremap jj <ESC>
+noremap / /\v
+vnoremap / /\v
+noremap <leader><space> :noh<cr>
+noremap <tab> %
+vnoremap <tab> %
+noremap <leader>w <C-w><C-w>l
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk%
+
+au FocusLost * :wa
+
