@@ -42,6 +42,8 @@ noremap <leader><space> :noh<cr>
 noremap <tab> %
 vnoremap <tab> %
 noremap <leader>w <C-w><C-w>l
+noremap ; :
+vnoremap ; :
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -52,7 +54,13 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
-nnoremap k gk%
+nnoremap k gk
 
 au FocusLost * :wa
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+
 
