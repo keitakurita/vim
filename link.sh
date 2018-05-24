@@ -1,1 +1,1 @@
-ln -s .vimrc $HOME/.vimrc 
+ln -sf $HOME/.vim/.vimrc $HOME/.vimrc 
