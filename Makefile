@@ -1,8 +1,11 @@
+GC = git clone --recursive
+bundle_dir = $(shell pwd)/bundle
 env:
-	git clone https://github.com/scrooloose/nerdtree.git $(shell pwd)/bundle/nerdtree
-	git clone https://github.com/scrooloose/nerdcommenter.git $(shell pwd)/bundle/nerdcommenter
-	git clone https://github.com/tpope/vim-surround.git $(shell pwd)/bundle/vim-surround
-	git clone https://github.com/tpope/vim-repeat.git $(shell pwd)/bundle/vim-repeat
-	git clone --recursive https://github.com/python-mode/python-mode.git $(shell pwd)/bundle/python-mode
+	$(GC) https://github.com/scrooloose/nerdtree.git $(bundle_dir)/nerdtree
+	$(GC) https://github.com/scrooloose/nerdcommenter.git $(bundle_dir)/nerdcommenter
+	$(GC) https://github.com/tpope/vim-surround.git $(bundle_dir)/vim-surround
+	$(GC) https://github.com/tpope/vim-repeat.git $(bundle_dir)/vim-repeat
+	$(GC) --recursive https://github.com/python-mode/python-mode.git $(bundle_dir)/python-mode
+	$(GC) --recursive https://github.com/davidhalter/jedi-vim.git $(bundle_dir)/jedi-vim
 	./link.sh
 
