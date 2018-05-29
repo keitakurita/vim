@@ -1,0 +1,9 @@
+#!/bin/bash
+BUNDLE=$(pwd)/bundle
+PKG=$1
+ACCOUNT=$2
+
+if [ ! -d $BUNDLE/$1 -o -z "$(ls $BUNDLE/$1)" ]; then
+    echo "Cloning $1 from https://github.com/$2/$1.git into $BUNDLE/$1";
+    git clone --recursive https://github.com/$2/$1.git $BUNDLE/$1;
+fi
