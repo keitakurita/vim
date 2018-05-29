@@ -30,9 +30,8 @@ set tabstop=4
 set smarttab
 
 set clipboard=unnamed
-set spell spelllang=en_us
 
-color desert
+color molokai
 
 let mapleader = ","
 
@@ -46,6 +45,7 @@ noremap <leader>w <C-w><C-w>l
 noremap ; :
 vnoremap ; :
 
+" for practicing moving
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -56,6 +56,10 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
+
+" leader commands
+noremap <leader>a :Ack 
+noremap <leader>T :NERDTreeToggle
 
 au FocusLost * :wa
 

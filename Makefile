@@ -9,7 +9,8 @@ packages:
 	./download vim-surround tpope
 	./download vim-repeat tpope
 	./download python-mode python-mode
-	./download jedi-vim davidhalteri
+	./download jedi-vim davidhalter
+	./download ack.vim mileszs
 
 vimrc:
 	./link.sh
