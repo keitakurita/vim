@@ -32,6 +32,7 @@ set smarttab
 set clipboard=unnamed
 
 color molokai
+let g:molokai_original = 1
 
 let mapleader = ","
 
@@ -59,13 +60,14 @@ nnoremap k gk
 
 " leader commands
 noremap <leader>a :Ack 
-noremap <leader>T :NERDTreeToggle
+noremap <leader>T :tabe 
+map <C-n> :NERDTreeToggle<cr>
+noremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 au FocusLost * :wa
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-n> :NERDTreeToggle<CR>
-
+autocmd BufEnter * lcd %:p:h
 

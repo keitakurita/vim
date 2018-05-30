@@ -11,6 +11,7 @@ packages:
 	./download python-mode python-mode
 	./download jedi-vim davidhalter
 	./download ack.vim mileszs
+	./download supertab ervandew
 
 vimrc:
 	./link.sh
