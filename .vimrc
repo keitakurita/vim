@@ -79,4 +79,8 @@ autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
 autocmd FileType cc setlocal shiftwidth=2 tabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
 
+" custom status line
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+
 
