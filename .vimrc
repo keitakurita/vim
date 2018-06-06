@@ -43,16 +43,15 @@ noremap <leader><space> :noh<cr>
 noremap <tab> %
 vnoremap <tab> %
 noremap <leader>w <C-w><C-w>l
-noremap ; :
-vnoremap ; :
+noremap \ ,
 
 " for practicing moving
-nnoremap <up> <nop>
-nnoremap <down> <nop>
+nnoremap <up> <C-u>
+nnoremap <down> <C-d>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
+inoremap <up> <C-u>
+inoremap <down> <C-d>
 inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
