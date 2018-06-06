@@ -63,6 +63,11 @@ noremap <leader>a :Ack
 noremap <leader>T :tabe 
 map <C-n> :NERDTreeToggle<cr>
 noremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 au FocusLost * :wa
 
