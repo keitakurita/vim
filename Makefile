@@ -12,6 +12,10 @@ packages:
 	./download jedi-vim davidhalter
 	./download ack.vim mileszs
 	./download supertab ervandew
+	./download command-t wincent
+	./download vim-airline vim-airline
+	./download vim-airline-themes vim-airline
+	./download vim-unimpaired tpope
 
 vimrc:
 	./link.sh
