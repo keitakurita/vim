@@ -74,7 +74,7 @@ au FocusLost * :wa
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd BufEnter * lcd %:p:h
+autocmd BufEnter * if expand('%:p') !~ '://' | :lchdir %:p:h | endif
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
 autocmd FileType cc setlocal shiftwidth=2 tabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
