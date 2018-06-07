@@ -33,7 +33,6 @@ set clipboard=unnamed
 
 color molokai
 let g:molokai_original = 1
-
 let mapleader = ","
 
 inoremap jj <ESC>
@@ -48,12 +47,10 @@ noremap \ ,
 " for practicing moving
 nnoremap <up> <C-u>
 nnoremap <down> <C-d>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+nnoremap <left> <C-o>
+nnoremap <right> <C-i>
 inoremap <up> <C-u>
 inoremap <down> <C-d>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
@@ -82,4 +79,7 @@ autocmd FileType c setlocal shiftwidth=2 tabstop=2
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 
+" syntax checking
+let g:syntastic_python_checkers=['flake8']
+left g:syntastic_python_flake8_args='--ignore=E502'
 
