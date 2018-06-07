@@ -83,3 +83,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:syntastic_python_checkers=['flake8']
 left g:syntastic_python_flake8_args='--ignore=E502'
 
+" custom functionality
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+    let temp = @s
+    norm! gv"sy
+    let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+    let @s = temp
+endfunction
+
