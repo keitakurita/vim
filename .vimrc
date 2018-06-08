@@ -21,6 +21,8 @@ Plugin 'wincent/command-t'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'Shougo/unite.vim'
+Plugin 'Yggdroot/indentLine'
 call vundle#end()            " required
 
 filetype plugin indent on
