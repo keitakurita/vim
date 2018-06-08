@@ -11,6 +11,5 @@ vimrc:
 	./link.sh
 
 reset:
-	cd bundle
-	ls | grep -v Vundle.vim | xargs rm -rf
+	cd bundle; ls | grep -v Vundle.vim | xargs rm -rf
 
