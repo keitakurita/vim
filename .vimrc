@@ -17,12 +17,14 @@ Plugin 'python-mode/python-mode'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
-Plugin 'wincent/command-t'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'Shougo/unite.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-eunuch'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()            " required
 
 filetype plugin indent on
