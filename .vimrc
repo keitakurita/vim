@@ -28,7 +28,7 @@ set softtabstop=4
 set expandtab
 set tabstop=4
 set smarttab
-
+set foldmethod=indent
 set clipboard=unnamed
 
 color molokai
@@ -43,6 +43,7 @@ noremap <tab> %
 vnoremap <tab> %
 noremap <leader>w <C-w><C-w>l
 noremap \ ,
+noremap <space> za
 
 " for practicing moving
 nnoremap <up> <C-u>
