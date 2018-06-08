@@ -1,6 +1,29 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'python-mode/python-mode'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'ervandew/supertab'
+Plugin 'wincent/command-t'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-unimpaired'
+call vundle#end()            " required
+
 filetype plugin indent on
-execute pathogen#infect()
-execute pathogen#helptags()
 set encoding=utf-8
 syntax on
 
