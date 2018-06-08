@@ -1,6 +1,6 @@
 GC = git clone --recursive
 bundle_dir = $(shell pwd)/bundle
-env: vimrc
+env: packages vimrc
 test: packages
 
 packages:
