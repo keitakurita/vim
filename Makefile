@@ -5,7 +5,7 @@ test: packages
 
 packages:
 	mkdir -p bundle
-	./download Vundle.vim Vundle
+	./download Vundle.vim VundleVim
 
 vimrc:
 	./link.sh
