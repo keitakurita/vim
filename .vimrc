@@ -26,6 +26,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
 call vundle#end()            " required
 
 filetype plugin indent on
@@ -121,4 +122,15 @@ function! s:VSetSearch()
     let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
     let @s = temp
 endfunction
+
+" for plugins
+" syntactic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
