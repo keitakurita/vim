@@ -27,6 +27,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()            " required
 
 filetype plugin indent on
