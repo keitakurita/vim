@@ -34,32 +34,39 @@ filetype plugin indent on
 set encoding=utf-8
 syntax on
 
-set wrap
-set linebreak
-set nolist
-
+set ai "Auto indent
+set autoindent
+set backspace=eol,start,indent
+set clipboard=unnamed
+set expandtab
+set foldcolumn=1
+set foldmethod=indent
+set gdefault
 set hlsearch
 set ignorecase
-set smartcase
-set gdefault
 set incsearch
-set showmatch
-set hlsearch
-set autoindent
-
-set ruler
-set number
+set linebreak
 set list
-set wildmenu
-set showcmd
-
+set magic
+set nolist
+set nobackup
+set nowb
+set noswapfile
+set number
+set ruler
 set shiftwidth=4
-set softtabstop=4
-set expandtab
-set tabstop=4
+set showcmd
+set showmatch
+set si "Smart indent
+set smartcase
 set smarttab
-set foldmethod=indent
-set clipboard=unnamed
+set softtabstop=4
+set tabstop=4
+set whichwrap+=<,>,h,l
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+set wildignore=*.o,*~,*.pyc
+set wildmenu
+set wrap
 
 color molokai
 let g:molokai_original = 1
@@ -78,8 +85,8 @@ noremap <space> za
 " for practicing moving
 nnoremap <up> <C-u>
 nnoremap <down> <C-d>
-nnoremap <left> <C-o>
-nnoremap <right> <C-i>
+nnoremap <left> <C-w>h
+nnoremap <right> <C-w>l
 inoremap <up> <C-u>
 inoremap <down> <C-d>
 nnoremap j gj
@@ -96,6 +103,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <leader>u :Unite 
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 au FocusLost * :wa
 
@@ -123,6 +135,18 @@ function! s:VSetSearch()
     let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
     let @s = temp
 endfunction
+" Delete trailing white space on save, useful for some filetypes ;)
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+endif
 
 " for plugins
 " syntactic
