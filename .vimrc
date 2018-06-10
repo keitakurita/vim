@@ -29,6 +29,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'nelstrom/vim-markdown-folding'
 call vundle#end()            " required
 
 filetype plugin indent on
