@@ -68,8 +68,7 @@ set wildignore=*.o,*~,*.pyc
 set wildmenu
 set wrap
 
-color molokai
-let g:molokai_original = 1
+color solarized
 let mapleader = ","
 
 inoremap jj <ESC>
