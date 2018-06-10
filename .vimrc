@@ -108,6 +108,8 @@ nnoremap <leader>u :Unite
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <leader>ss :setlocal spell!<cr>
+map <leader>pp :setlocal paste!<cr>
 
 au FocusLost * :wa
 
