@@ -3,7 +3,8 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf " uncomment for Mac
+set rtp+=~/.fzf " uncomment for linux
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -30,6 +31,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nelstrom/vim-markdown-folding'
+Plugin 'vim-scripts/Conque-GDB'
+Plugin 'scrooloose/nerdcommenter'
 call vundle#end()            " required
 
 filetype plugin indent on
@@ -70,7 +73,10 @@ set wildignore=*.o,*~,*.pyc
 set wildmenu
 set wrap
 
-color solarized
+" choose color scheme according to feeling
+color molokai
+let g:molokai_original = 1
+" color solarized
 let mapleader = ","
 
 inoremap jj <ESC>
@@ -157,6 +163,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
