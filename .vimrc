@@ -78,6 +78,7 @@ color molokai
 let g:molokai_original = 1
 " color solarized
 let mapleader = ","
+set guifont=DejaVuSansMono\ Nerd\ Font:h13
 
 inoremap jj <ESC>
 noremap / /\v
