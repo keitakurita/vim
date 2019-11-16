@@ -1,3 +1,6 @@
+"cheat sheet
+" fzf: search through files fuzzily
+" ack: search for strings
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
