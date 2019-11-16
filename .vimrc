@@ -19,9 +19,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 " YouCompleteMe is better but it causes lots of problems
-" So defaulting to jedi-vim
-Plugin 'davidhalter/jedi-vim'
-"Plugin 'Valloric/YouCompleteMe'
+" Leaving this install decision to future self according to environment
+" Plugin 'davidhalter/jedi-vim'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
