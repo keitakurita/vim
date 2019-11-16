@@ -117,8 +117,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+<<<<<<< Updated upstream
 nnoremap <leader>u :Unite file<cr>
 noremap <C-p> :Files<cr>
+=======
+noremap <leader>F :FZF
+>>>>>>> Stashed changes
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
@@ -137,13 +141,19 @@ autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
 autocmd FileType cc setlocal shiftwidth=2 tabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
 
+" searching
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " custom status line
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 
 " syntax checking
-let g:syntastic_python_checkers=['flake8']
-left g:syntastic_python_flake8_args='--ignore=E502'
+let g:syntastic_python_checkers=['/Users/keitakurita/miniconda3/envs/dl/bin/flake8']
+let g:syntastic_python_pyflakes_exe = 'python -m pyflakes'
+let g:syntastic_python_flake8_args='--ignore=E502,E302,W0401'
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
 
 " custom functionality
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
@@ -178,7 +188,9 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+
+let g:pymode_python = 'python3'
 
 " ctags
 set autochdir
