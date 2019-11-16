@@ -33,6 +33,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'hashivim/vim-terraform'
+Plugin 'keith/swift.vim'
+Plugin 'craigemery/vim-autotag'
+
 call vundle#end()            " required
 
 filetype plugin indent on
