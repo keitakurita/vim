@@ -145,7 +145,6 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 
 " syntax checking
-let g:syntastic_python_checkers=['/Users/keitakurita/miniconda3/envs/dl/bin/flake8']
 let g:syntastic_python_pyflakes_exe = 'python -m pyflakes'
 let g:syntastic_python_flake8_args='--ignore=E502,E302,W0401'
 let g:terraform_fmt_on_save=1
