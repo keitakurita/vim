@@ -1,3 +1,6 @@
+"cheat sheet
+" fzf: search through files fuzzily
+" ack: search for strings
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,7 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'python-mode/python-mode'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
@@ -30,13 +33,13 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'nelstrom/vim-markdown-folding'
-Plugin 'vim-scripts/Conque-GDB'
+Plugin 'nelstrom/vim-markdown-folding' 
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'hashivim/vim-terraform'
 Plugin 'keith/swift.vim'
 Plugin 'craigemery/vim-autotag'
-
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'Konfekt/FastFold'
 call vundle#end()            " required
 
 filetype plugin indent on
@@ -114,7 +117,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <leader>u :Unite 
+nnoremap <leader>u :Unite file<cr>
+noremap <C-p> :Files<cr>
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
@@ -167,6 +171,8 @@ endif
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+" vim fugitive
+set diffopt+=vertical
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_always_populate_loc_list = 1
@@ -174,3 +180,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" ctags
+set autochdir
+set tags=./tags;,tags
