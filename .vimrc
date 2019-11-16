@@ -132,7 +132,7 @@ map <leader>pp :setlocal paste!<cr>
 au FocusLost * :wa
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd BufEnter * if expand('%:p') !~ '://' | :lchdir %:p:h | endif
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
@@ -147,6 +147,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 
 " syntax checking
+let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_python_pyflakes_exe = 'python -m pyflakes'
 let g:syntastic_python_flake8_args='--ignore=E502,E302,W0401'
 let g:terraform_fmt_on_save=1
@@ -185,7 +186,7 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 
 let g:pymode_python = 'python3'
 
