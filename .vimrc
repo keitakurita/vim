@@ -18,8 +18,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'python-mode/python-mode'
-Plugin 'Valloric/YouCompleteMe'
+" YouCompleteMe is better but it causes lots of problems
+" So defaulting to jedi-vim
+Plugin 'davidhalter/jedi-vim'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
