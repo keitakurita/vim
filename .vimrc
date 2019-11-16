@@ -117,12 +117,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-<<<<<<< Updated upstream
 nnoremap <leader>u :Unite file<cr>
 noremap <C-p> :Files<cr>
-=======
-noremap <leader>F :FZF
->>>>>>> Stashed changes
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
