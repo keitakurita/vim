@@ -119,7 +119,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <leader>u :Unite file<cr>
+nnoremap <C-u> :Unite file<cr>
 noremap <C-p> :Files<cr>
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
