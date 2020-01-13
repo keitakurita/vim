@@ -89,6 +89,9 @@ let g:molokai_original = 1
 let mapleader = ","
 set guifont=DejaVuSansMono\ Nerd\ Font:h13
 
+" map semicolon to colon by default
+:nmap ; :
+
 inoremap jj <ESC>
 noremap / /\v
 vnoremap / /\v
@@ -179,8 +182,6 @@ endif
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-" vim fugitive
-set diffopt+=vertical
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_always_populate_loc_list = 1
