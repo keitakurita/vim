@@ -113,7 +113,7 @@ nnoremap j gj
 nnoremap k gk
 
 " leader commands
-noremap <leader>a :Ack 
+noremap <leader>a :Gcd <bar> Ack 
 noremap <leader>T :tabe 
 map <C-n> :NERDTreeToggle<cr>
 noremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
@@ -123,7 +123,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-u> :Unite file<cr>
-noremap <C-p> :Files<cr>
+noremap <C-p> :ProjectFiles<cr>
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
@@ -143,7 +143,18 @@ autocmd FileType cc setlocal shiftwidth=2 tabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
 
 " searching
-let g:ackprg = 'ag --nogroup --nocolor --column'
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --column'
+endif
+
+function! s:find_git_root()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+if executable('ag')
+    let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+endif
 
 " custom status line
 set laststatus=2
