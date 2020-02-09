@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+from typing import *
+import click
+from git import Git
+from datetime import datetime
+from dateutil.parser import parse
+from dateutil.relativedelta import relativedelta
+import pytz
+
+utc = pytz.UTC
+
+def to_name_periods(branch_entry: List[str]) -> List[Tuple[str, str]]:
+    ref, date = branch_entry.split("\t")
+    branch_name = ref.replace("refs/heads/", "")
+    delta = relativedelta(datetime.now(utc), parse(date))
+    elapsed_period = f"{delta.days} days {delta.hours} hours {delta.minutes} minutes"
+    return branch_name, elapsed_period
+
+
+if __name__ == "__main__":
+    g = Git()
+    branches = g.branch(["--sort=committerdate", "--format=%(refname)\t%(committerdate)"]).split("\n")
+    processed = list(map(to_name_periods, branches))
+
+    max_branch_name_len = max(len(x[0]) for x in processed)
+    sep = " || "
+    def format_row(branch_name, elapsed_period):
+        padding = " " * (max_branch_name_len - len(branch_name))
+        return f"{branch_name}{padding}{sep}{elapsed_period}"
+        
+    header = format_row("Branch name","Period since last update     ")
+    print(header)
+    print("-" * len(header))
+    for branch_name, elapsed_period in processed:
+        if branch_name == "master":
+            continue
+        print(format_row(branch_name, elapsed_period))
+        if click.confirm('Do you want to delete?'):
+            g.branch(["-D", branch_name])
+            print(f"Deleted {branch_name}\n") 
