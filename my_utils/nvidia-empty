@@ -1,0 +1,4 @@
+#!/usr/bin/env python
+
+import GPUtil
+print(str(GPUtil.getFirstAvailable()[0]), end="")
