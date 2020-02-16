@@ -188,6 +188,9 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
+" vim fugitive
+set diffopt+=vertical
+
 " for plugins
 " syntactic
 set statusline+=%#warningmsg#
@@ -201,6 +204,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:pymode_python = 'python3'
+
+" snippets
+nnoremap <leader>pymain :-1read $HOME/.vim/snippets/main.py
 
 " ctags
 set autochdir
