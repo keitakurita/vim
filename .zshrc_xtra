@@ -1,0 +1,36 @@
+# no duplicats in zsh history
+setopt HIST_IGNORE_ALL_DUPS
+
+# vi mode
+set -o vi
+export KEYTIMEOUT=1
+
+bindkey "^R" history-incremental-search-backward
+# Better searching in command mode
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
+
+# Better
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'l' vi-forward-char
+
+# Beginning search with arrow keys
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+bindkey -M vicmd "k" up-line-or-beginning-search
+bindkey -M vicmd "j" down-line-or-beginning-search
+
+
+alias gmo="git pull origin master"
+alias gmm="git merge master"
+alias gc="git checkout"
+
+function gpo() {
+    git push origin $(git rev-parse --abbrev-ref HEAD)
+}
+
+function gpof() {
+    git push -f origin $(git rev-parse --abbrev-ref HEAD)
+}

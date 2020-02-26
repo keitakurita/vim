@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Borrowed from https://github.com/samoshkin/tmux-config/blob/af2efd9561f41f30c51c9deeeab9451308c4086b/tmux/yank.sh
+# resolve target terminal to send escape sequence
+# if we are on remote machine, send directly to SSH_TTY to transport escape sequence
+# to terminal on local machine, so data lands in clipboard on our local machine
+pane_active_tty=$(tmux list-panes -F "#{pane_active} #{pane_tty}" | awk '$1=="1" { print $2 }')
+
+[ $# -ge 1 -a -f "$1" ] && input="$1" || input="-"
+printf "\033Ptmux;\033\033]52;c;$(cat $input | base64 | tr -d '\r\n' )\a\033\\" > $pane_active_tty
