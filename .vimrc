@@ -205,8 +205,14 @@ let g:syntastic_check_on_wq = 0
 
 let g:pymode_python = 'python3'
 
+function! Osc52Yank(str)
+    let _ = system('echo -n ' . shellescape(substitute(a:str, '\n\+$', '', '')) . ' | pbcp ')
+    redraw!
+endfunction
+nnoremap <leader>y :call Osc52Yank(@")<cr>
+
 " snippets
-nnoremap <leader>pymain :-1read $HOME/.vim/snippets/main.py
+nnoremap <leader>pymain :-1read $HOME/.vim/snippets/main.py<cr>
 
 " ctags
 set autochdir
